@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Template Base</title>
-    </head>
-    <body>
-        <h1>Bienvenido a la lista de contactos</h1>
-        <p>Con Templates</p>
-        <p><strong>Usuario actual:</strong> {{ request.user }}</p>
-        <p><strong>¿Está autenticado?:</strong> {{ request.user.is_authenticated }}</p>
-        <p><strong>Método HTTP:</strong> {{ request.method }}</p>
-        <p><strong>Ruta solicitada:</strong> {{ request.path }}</p>
-        <p><strong>Dirección IP del cliente:</strong> {{ request.META.REMOTE_ADDR }}</p>
-        </body>
-</html>
+{% extends "inicio/base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h2>Bienvenido a la lista de contactos</h2>
+    <p>Usuario actual: {{ request.user }}</p>
+    <p>¿Está autenticado?: {{ request.user.is_authenticated }}</p>
+    <p>Método HTTP: {{ request.method }}</p>
+    <p>Ruta solicitada: {{ request.path }}</p>
+    <p>Dirección IP del cliente: {{ request.META.REMOTE_ADDR }}</p>
+{% endblock %}
