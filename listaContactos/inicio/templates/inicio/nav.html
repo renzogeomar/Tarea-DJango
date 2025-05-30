@@ -1,0 +1,12 @@
+<!-- templates/nav.html -->
+<nav>
+    <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/contactos/">Contactos</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="/logout/">Cerrar sesión</a></li>
+        {% else %}
+            <li><a href="/login/">Iniciar sesión</a></li>
+        {% endif %}
+    </ul>
+</nav>

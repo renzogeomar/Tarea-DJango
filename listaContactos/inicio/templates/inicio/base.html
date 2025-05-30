@@ -5,14 +5,8 @@
     <title>{% block title %}Mi Sitio{% endblock %}</title>
 </head>
     <body>
-        <header>
-            <h1>Sitio de Contactos</h1>
-        </header>
-
-        <nav>
-            <a href="/">Inicio</a> |
-            <a href="/personas/">Personas</a>
-        </nav>
+        
+        {% include "inicio/nav.html" %}
 
         <main>
             {% block content %}
