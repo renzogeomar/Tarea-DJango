@@ -6,7 +6,7 @@ def pagina_inicio(request, *args, **kwargs):
     print("Args:", args)
     print("Kwargs:", kwargs)
     print("Usuario:", request.user)
-    return HttpResponse('<h1>Bienvenido a la lista de contactos</h1>')
+    return render(request, "inicio/home.html", {})
 def anotherView(request):
     return HttpResponse('<h1>Solo otra página</h1>')
 def anotherView2(request):
