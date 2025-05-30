@@ -7,5 +7,10 @@
     <body>
         <h1>Bienvenido a la lista de contactos</h1>
         <p>Con Templates</p>
-    </body>
+        <p><strong>Usuario actual:</strong> {{ request.user }}</p>
+        <p><strong>¿Está autenticado?:</strong> {{ request.user.is_authenticated }}</p>
+        <p><strong>Método HTTP:</strong> {{ request.method }}</p>
+        <p><strong>Ruta solicitada:</strong> {{ request.path }}</p>
+        <p><strong>Dirección IP del cliente:</strong> {{ request.META.REMOTE_ADDR }}</p>
+        </body>
 </html>
