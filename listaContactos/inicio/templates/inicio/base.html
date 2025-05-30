@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+</head>
+    <body>
+        <header>
+            <h1>Sitio de Contactos</h1>
+        </header>
+
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/personas/">Personas</a>
+        </nav>
+
+        <main>
+            {% block content %}
+            <!-- Contenido de cada página -->
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>© 2025 - Lista de Contactos</p>
+        </footer>
+    </body>
+</html>
