@@ -11,7 +11,9 @@
     <p>Dirección IP del cliente: {{ request.META.REMOTE_ADDR }}</p>
     <h3>{{myText}}</h3>
     <h3>{{myNumber}}</h3>
+    <ul>
     {% for myItem in myList %}
-        <li>{{ myItem }}</li>
+        <li>{{forloop.counter}} - {{ myItem }}</li>
     {% endfor %}
+    </ul>
 {% endblock %}

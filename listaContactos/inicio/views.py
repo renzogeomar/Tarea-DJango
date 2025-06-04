@@ -6,7 +6,7 @@ def pagina_inicio(request, *args, **kwargs):
     myContext = {
         'myText' : 'Esto es sobre nosotros',
         'myNumber' : 123,
-        'myList' : [1, 2, 3, 4, 5],
+        'myList' : [11, 22, 33, 44, 55],
     }
     print("Args:", args)
     print("Kwargs:", kwargs)
