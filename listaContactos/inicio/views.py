@@ -3,10 +3,14 @@ from django.http import HttpResponse
 
 # Create your views here.
 def pagina_inicio(request, *args, **kwargs):
+    myContext = {
+        'myText' : 'Esto es sobre nosotros',
+        'myNumber' : 123,
+    }
     print("Args:", args)
     print("Kwargs:", kwargs)
     print("Usuario:", request.user)
-    return render(request, "inicio/home.html", {})
+    return render(request, "inicio/home.html", myContext)
 def anotherView(request):
     return HttpResponse('<h1>Solo otra página</h1>')
 def anotherView2(request):
