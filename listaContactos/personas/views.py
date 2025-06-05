@@ -9,4 +9,8 @@ def personaTestView(request):
     }
     return render(request, 'personas/test.html', contex)
 def descripcion(request):
-    return render(request, 'personas/descripcion.html')
+    obj = Persona.objects.get(id=1)
+    contex = {
+        'objeto' : obj,
+    }
+    return render(request, 'personas/descripcion.html',contex)

@@ -1,7 +1,10 @@
 {% extends 'inicio/base.html '%}
 
 {% block content %}
-<h1> {{objeto.nombres}} </h1>
+<h1>Descripción de la persona</h1>
+<p> Nombres: {{objeto.nombres}} </p>
+<p>Apellidos: {{ objeto.apellidos }}</p>
+<p>Edad: {{ objeto.edad }}</p>
 <h2> 
     {% if objeto.edad > 40 %}
     debe cuidarse del colesterol
