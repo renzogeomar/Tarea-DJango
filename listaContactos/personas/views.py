@@ -5,7 +5,8 @@ from .models import Persona
 def personaTestView(request):
     obj = Persona.objects.get(id=1)
     contex = {
-        'nombre' : obj.nombres,
-        'edad' : obj.edad,
+        'objeto' : obj,
     }
-    return render(request, "personas/test.html", contex)
+    return render(request, 'personas/test.html', contex)
+def descripcion(request):
+    return render(request, 'personas/descripcion.html')
