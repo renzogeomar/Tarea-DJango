@@ -16,8 +16,12 @@ def descripcion(request):
     }
     return render(request, 'personas/descripcion.html',contex)
 def personaCreateView(request):
-    print('GET: ', request.GET)
-    print('POST: ', request.POST)
+    print(request)
+    if request.method == 'POST':
+        nombre = request.POST.get('q')
+        print(nombre)
+    #print('GET: ', request.GET)
+    #print('POST: ', request.POST)
     context = {}
     return render(request, 'personas/personasCreate.html', context)
 def searchForHelp(request):
