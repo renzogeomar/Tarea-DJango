@@ -11,9 +11,18 @@
     <p>Dirección IP del cliente: {{ request.META.REMOTE_ADDR }}</p>
     <h3>{{myText}}</h3>
     <h3>{{myNumber}}</h3>
+    <h3> Listado de elementos forloop </h3>
     <ul>
         {% for item in myList %}
-            <li>{{forloop.counter}} - {{ item }}</li>
+            <li>
+                <strong>Elemento:</strong> {{ item }}<br>
+                forloop.counter: {{ forloop.counter }}<br> <!-- Numero de elementos (empieza en 1) -->
+                forloop.counter0: {{ forloop.counter0 }}<br> <!-- Numero de elementos (empieza en 0) -->
+                forloop.revcounter: {{ forloop.revcounter }}<br> <!-- Cuántos elementos quedan (empezando desde el final, desde 1) -->
+                forloop.revcounter0: {{ forloop.revcounter0 }}<br> <!-- Cuántos elementos quedan (empezando desde el final, desde 0) -->
+                forloop.first: {{ forloop.first }}<br> <!-- Indica si es el primer elemento -->
+                forloop.last: {{ forloop.last }}<br> <!-- Indica si es el último elemento -->
+            </li>    
         {% endfor %}
     </ul>
     <h4>Lista de invertida:</h4>
