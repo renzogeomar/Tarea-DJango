@@ -12,8 +12,26 @@
     <h3>{{myText}}</h3>
     <h3>{{myNumber}}</h3>
     <ul>
-    {% for myItem in myList %}
-        <li>{{forloop.counter}} - {{ myItem }}</li>
-    {% endfor %}
+        {% for item in myList %}
+            <li>{{forloop.counter}} - {{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Lista de invertida:</h4>
+    <ul>
+        {% for item in reversedList reversed%}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Lista de puntos:</h4>
+    <ul> 
+        {% for x , y in points %}
+            <li> {{x}} - {{y}} </li>
+        {% endfor %}
+    </ul>
+    <h4>Diccionario(key,value): </h4>
+    <ul> 
+        {% for key, value in data.items%}
+            <li> {{key}} - {{value}} </li>
+        {% endfor %}
     </ul>
 {% endblock %}

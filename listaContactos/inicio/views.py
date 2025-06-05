@@ -7,6 +7,13 @@ def pagina_inicio(request, *args, **kwargs):
         'myText' : 'Esto es sobre nosotros',
         'myNumber' : 123,
         'myList' : [11, 22, 33, 44, 55],
+        'reversedList' : ['primero', 'segundo', 'tercero'],
+        'points' : [(1,2), (3,4), (5,6)],
+        'data' : {
+            'nombre' : 'Renzo',
+            'edad' : 18,
+            'ciudad' : 'Arequipa',
+        }
     }
     print("Args:", args)
     print("Kwargs:", kwargs)
