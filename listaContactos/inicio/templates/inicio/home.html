@@ -22,25 +22,66 @@
                 forloop.revcounter0: {{ forloop.revcounter0 }}<br> <!-- Cuántos elementos quedan (empezando desde el final, desde 0) -->
                 forloop.first: {{ forloop.first }}<br> <!-- Indica si es el primer elemento -->
                 forloop.last: {{ forloop.last }}<br> <!-- Indica si es el último elemento -->
-            </li>    
+            </li>
+            {% if item > 50%}
+                <p> Este Numero es mayor que 50</p>
+            {% endif %}                   
         {% endfor %}
     </ul>
+
     <h4>Lista de invertida:</h4>
     <ul>
         {% for item in reversedList reversed%}
             <li>{{ item }}</li>
         {% endfor %}
     </ul>
+
     <h4>Lista de puntos:</h4>
     <ul> 
         {% for x , y in points %}
             <li> {{x}} - {{y}} </li>
         {% endfor %}
     </ul>
+    
     <h4>Diccionario(key,value): </h4>
     <ul> 
         {% for key, value in data.items%}
             <li> {{key}} - {{value}} </li>
         {% endfor %}
     </ul>
+
+    <h2> Prueba de condiciones </h2>
+    <h3>Evaluación de listas:</h3>
+    {% if listaAtletas %}
+        <p>Hay atletas. Total: {{ listaAtletas|length }}</p>
+    {% elif listaCasilleros %}
+        <p>Hay atletas en el vestuario.</p>
+    {% else %}
+        <p>No hay atletas.</p>
+    {% endif %}
+
+    <h3>Evaluación con operadores lógicos:</h3>
+    {% if listaAtletas and listaEntrenadores %}
+        <p>Hay atletas y entrenadores disponibles.</p>
+    {% endif %}
+
+    {% if not listaAtletas %}
+        <p>No hay atletas.</p>
+    {% endif %}
+
+    {% if listaAtletas or listaEntrenadores %}
+        <p>Hay atletas o entrenadores.</p>
+    {% endif %}
+
+    {% if not listaAtletas or listaEntrenadores %}
+        <p>No hay atletas o hay entrenadores.</p>
+    {% endif %}
+
+    {% if listaAtletas and not listaEntrenadores %}
+        <p>Hay atletas pero no hay entrenadores.</p>
+    {% endif %}
+
+
+    
+
 {% endblock %}
