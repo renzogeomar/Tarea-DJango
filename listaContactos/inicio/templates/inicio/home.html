@@ -81,6 +81,59 @@
         <p>Hay atletas pero no hay entrenadores.</p>
     {% endif %}
 
+    <h3>Evaluación con operadores de comparación:</h3>
+    <p>somevar = {{ variable }}</p>
+
+    {% if variable == 10 %}
+        <p>variable es igual a 10</p>
+    {% endif %}
+
+    {% if variable != 5 %}
+        <p>variable es distinto de 5</p>
+    {% endif %}
+
+    {% if variable > 3 %}
+        <p>variable es mayor que 3</p>
+    {% endif %}
+
+    {% if variable < 100 %}
+        <p>variable es menor que 100</p>
+    {% endif %}
+
+    {% if variable >= 10 %}
+        <p>variable es mayor o igual a 10</p>
+    {% endif %}
+
+    {% if variable <= 10 %}
+        <p>variable es menor o igual a 10</p>
+    {% endif %}
+    
+    <h3>Evaluación con `in` y `not in`:</h3>
+    {% if "hello" in saludos %}
+        <p>La palabra "hello" está en saludos.</p>
+    {% endif %}
+
+    {% if "bye" not in saludos %}
+        <p>La palabra "bye" no está en saludos.</p>
+    {% endif %}
+
+    <h3>Evaluación con `is` e `is not`:</h3>
+    {% if status is True %}
+        <p>El estado es True.</p>
+    {% endif %}
+
+    {% if status is not False %}
+        <p>El estado no es False.</p>
+    {% endif %}
+
+    {% if maybe_none is None %}
+        <p>La variable maybe_none es None.</p>
+    {% endif %}
+
+    {% if maybe_none is not None %}
+        <p>La variable maybe_none NO es None.</p>
+    {% endif %}
+
 
     
 
