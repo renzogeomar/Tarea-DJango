@@ -9,7 +9,7 @@
     <p>Método HTTP: {{ request.method }}</p>
     <p>Ruta solicitada: {{ request.path }}</p>
     <p>Dirección IP del cliente: {{ request.META.REMOTE_ADDR }}</p>
-    <h3>{{myText}}</h3>
+    <h3>{{myText|upper}}</h3>
     <h3>{{myNumber}}</h3>
     <h3> Listado de elementos forloop </h3>
     <ul>
@@ -107,7 +107,7 @@
     {% if variable <= 10 %}
         <p>variable es menor o igual a 10</p>
     {% endif %}
-    
+
     <h3>Evaluación con `in` y `not in`:</h3>
     {% if "hello" in saludos %}
         <p>La palabra "hello" está en saludos.</p>
@@ -132,6 +132,49 @@
 
     {% if maybe_none is not None %}
         <p>La variable maybe_none NO es None.</p>
+    {% endif %}
+
+    <h2> Pruebas de filtros en condiciones </h2>
+
+    <h3> Filtro `length`:</h3>
+    <p>Mensajes: {{ messages }}</p>
+    {% if messages|length >= 3 %}
+        <p> Tienes muchos mensajes ({{ messages|length }})</p>
+    {% else %}
+        <p> Tienes pocos mensajes.</p>
+    {% endif %}
+
+    <h3> Filtro `lower`:</h3>
+    {% if name|lower == "juan" %}
+        <p>Hola JUAN (filtro aplicado: {{ name|lower }})</p>
+    {% else %}
+        <p>No eres Juan.</p>
+    {% endif %}
+
+    <h3> Filtro `upper`:</h3>
+    {% if name2|upper == "CARLOS" %}
+        <p>Hola CARLOS (filtro aplicado: {{ name2|upper }})</p>
+    {% endif %}
+
+    <h3> Filtro `default`:</h3>
+    <p>nickname: {{ nickname|default:"Sin apodo" }}</p>
+
+    {% if nickname|default:"Sin apodo" == "Sin apodo" %}
+        <p>No tienes apodo.</p>
+    {% else %}
+        <p>Tu apodo es: {{ nickname }}</p>
+    {% endif %}
+
+    <h3> Filtro `date` (en visualización):</h3>
+    <p>Fecha de hoy: {{ today|date:"d/m/Y" }}</p>
+
+    <h3> Combinación de filtros con lógica:</h3>
+    {% if messages|length > 1 and name|lower == "juan" %}
+        <p> Eres Juan y tienes más de un mensaje.</p>
+    {% endif %}
+
+    {% if not messages or messages|length == 0 %}
+        <p> No hay mensajes.</p>
     {% endif %}
 
 

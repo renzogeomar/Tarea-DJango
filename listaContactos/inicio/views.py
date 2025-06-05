@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from datetime import date
 
 # Create your views here.
 def pagina_inicio(request, *args, **kwargs):
@@ -21,6 +22,11 @@ def pagina_inicio(request, *args, **kwargs):
         'saludos': ['hello', 'hi', 'hey'],
         'status': True,
         'maybe_none': None,
+        'messages': ['Hola', 'Bienvenido', 'Revisa tu correo'],
+        'name': 'Juan',
+        'name2' : 'Carlos',
+        'nickname': '',  
+        'today': date.today(),
     }
     print("Args:", args)
     print("Kwargs:", kwargs)
