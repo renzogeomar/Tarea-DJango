@@ -1,12 +1,14 @@
 {% extends 'personas/base.html' %}
+
 {% block title %}
-    Nueva Persona
+    {% if object.pk %}Editar{% else %}Nueva{% endif %} Persona
 {% endblock %}
 
 {% block body %}
-    <h1> Nueva Persona </h1>
-    <form method = "post">{% csrf_token %}
+    <h1>{% if object.pk %}Editar{% else %}Nueva{% endif %} Persona</h1>
+    <form method="post">
+        {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Save"> 
+        <input type="submit" value="Guardar">
     </form>
 {% endblock %}

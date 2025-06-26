@@ -43,3 +43,12 @@ class PersonaCreateView(CreateView):
         'email',
         'activo'
     ]
+class PersonaUpdateView(UpdateView):
+    model = Persona
+    fields = [
+        'nombres',
+        'apellidos',
+        'edad',
+        'email',
+        'activo'
+    ]
