@@ -25,9 +25,10 @@ from personas.views import searchForHelp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', pagina_inicio, name='pagina_inicio'),
-    path('another/', anotherView),
-    path('another2/', anotherView2),
+    #path('another/', anotherView),
+    #path('another2/', anotherView2),
     path('personas/', include('personas.urls')),
-    path('agregar/', personaCreateView, name='createPersona'),
-    path('search/', searchForHelp, name='buscar'),
+    #path('agregar/', personaCreateView, name='createPersona'),
+    #path('search/', searchForHelp, name='buscar'),
+
 ]
