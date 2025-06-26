@@ -6,6 +6,7 @@ from .views import (
     PersonaCreateView,
     PersonaUpdateView,
     PersonaDeleteView,
+    PersonaQueryView,
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('create/', PersonaCreateView.as_view(), name='persona-create'),
     path('update/<int:pk>/', PersonaUpdateView.as_view(), name='persona-update'),
     path('delete/<int:pk>/', PersonaDeleteView.as_view(), name='persona-delete'),
+    path('query/', PersonaQueryView.as_view(), name='persona-query'),
 ]

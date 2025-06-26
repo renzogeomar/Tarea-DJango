@@ -5,6 +5,8 @@ from django.views.generic.list import (ListView,)
 from django.views.generic.detail import (DetailView,)
 from django.views.generic.edit import (CreateView, UpdateView, DeleteView)
 from django.urls import reverse_lazy
+from django.views import View
+from django.http import HttpResponse
 
 # Create your views here.
 def personaTestView(request):
@@ -56,3 +58,6 @@ class PersonaUpdateView(UpdateView):
 class PersonaDeleteView(DeleteView):
     model = Persona
     success_url = reverse_lazy('personas:persona-list')
+class PersonaQueryView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Hola mundo con clases')
