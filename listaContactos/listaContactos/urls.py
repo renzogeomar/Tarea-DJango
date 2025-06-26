@@ -27,7 +27,7 @@ urlpatterns = [
     path('', pagina_inicio, name='pagina_inicio'),
     #path('another/', anotherView),
     #path('another2/', anotherView2),
-    path('personas/', include('personas.urls')),
+    path('personas/', include(('personas.urls', 'personas'), namespace='personas')),
     #path('agregar/', personaCreateView, name='createPersona'),
     #path('search/', searchForHelp, name='buscar'),
 

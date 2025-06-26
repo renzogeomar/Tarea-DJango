@@ -3,6 +3,7 @@ from .models import Persona
 from .forms import PersonaForm
 from django.views.generic.list import (ListView,)
 from django.views.generic.detail import (DetailView,)
+from django.views.generic.edit import (CreateView, UpdateView, DeleteView)
 
 # Create your views here.
 def personaTestView(request):
@@ -33,3 +34,12 @@ class PersonaListView(ListView):
     queryset = Persona.objects.filter(edad__lte= '40')
 class PersonaDetailView(DetailView):
     model = Persona
+class PersonaCreateView(CreateView):
+    model = Persona
+    fields = [
+        'nombres',
+        'apellidos',
+        'edad',
+        'email',
+        'activo'
+    ]
