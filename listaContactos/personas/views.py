@@ -29,3 +29,4 @@ def searchForHelp(request):
     return render(request, 'personas/search.html')
 class PersonaListView(ListView):
     model = Persona
+    queryset = Persona.objects.filter(edad__lte= '40')
