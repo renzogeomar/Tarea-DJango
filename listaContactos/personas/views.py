@@ -4,6 +4,7 @@ from .forms import PersonaForm
 from django.views.generic.list import (ListView,)
 from django.views.generic.detail import (DetailView,)
 from django.views.generic.edit import (CreateView, UpdateView, DeleteView)
+from django.urls import reverse_lazy
 
 # Create your views here.
 def personaTestView(request):
@@ -52,3 +53,6 @@ class PersonaUpdateView(UpdateView):
         'email',
         'activo'
     ]
+class PersonaDeleteView(DeleteView):
+    model = Persona
+    success_url = reverse_lazy('personas:persona-list')
